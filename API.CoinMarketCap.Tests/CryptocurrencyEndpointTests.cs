@@ -1,5 +1,5 @@
 ﻿using API.CoinMarketCap.Response.Info;
-using API.CoinMarketCap.Response.Latest;
+using API.CoinMarketCap.Response.Quotes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace API.CoinMarketCap.Tests
             Assert.IsTrue(singleResult.Data["ETH"].Symbol.ToLower() == "eth");
             Assert.IsNotNull(singleResult.Data["ETH"].Quote[FiatCurrency.AUD.ToString()]);
 
-            CryptocurrencyQuotesResponse multiResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] { "BTC", "ETH" });
+            CryptocurrencyQuotesResponse multiResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] { "XRP", "ETH" });
             Assert.IsTrue(multiResult.Data.Count == 2);
             Assert.IsTrue(multiResult.Data["ETH"].Symbol.ToLower() == "eth");
             Assert.IsNotNull(multiResult.Data["ETH"].Quote[FiatCurrency.USD.ToString()]);

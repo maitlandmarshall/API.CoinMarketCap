@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.CoinMarketCap.Response.Latest
+namespace API.CoinMarketCap.Response.Quotes
 {
     public class CryptocurrencyQuote
     {
@@ -20,13 +20,13 @@ namespace API.CoinMarketCap.Response.Latest
         public string Slug { get; set; }
 
         [JsonProperty("circulating_supply")]
-        public uint CirculatingSupply { get; set; }
+        public long CirculatingSupply { get; set; }
 
         [JsonProperty("total_supply")]
-        public uint TotalSupply { get; set; }
+        public long TotalSupply { get; set; }
 
         [JsonProperty("max_supply")]
-        public uint? MaxSupply { get; set; }
+        public long? MaxSupply { get; set; }
 
         [JsonProperty("date_added")]
         public DateTime DateAdded { get; set; }

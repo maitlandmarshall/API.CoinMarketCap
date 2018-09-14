@@ -1,5 +1,5 @@
 ﻿using API.CoinMarketCap.Response.Info;
-using API.CoinMarketCap.Response.Latest;
+using API.CoinMarketCap.Response.Quotes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

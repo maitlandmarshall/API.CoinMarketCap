@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.CoinMarketCap
+namespace API.CoinMarketCap.Response
 {
     public class Status
     {
@@ -34,9 +34,6 @@ namespace API.CoinMarketCap
     public abstract class CoinMarketCapAPIResponse<Response> : CoinMarketCapAPIResponse
     {
         [JsonProperty("data")]
-        protected JObject WeakData { get; set; }
-
-        protected Response data;
-        public abstract Response Data { get; }
+        public Response Data { get; set; }
     }
 }

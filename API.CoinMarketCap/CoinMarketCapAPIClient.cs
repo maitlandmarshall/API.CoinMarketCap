@@ -1,4 +1,5 @@
-﻿using API.CoinMarketCap.Response.Info;
+﻿using API.CoinMarketCap.Response;
+using API.CoinMarketCap.Response.Info;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -12,6 +13,42 @@ using System.Web;
 
 namespace API.CoinMarketCap
 {
+    public enum FiatCurrency
+    {
+        USD,
+        AUD,
+        BRL,
+        CAD,
+        CHF,
+        CLP,
+        CNY,
+        CZK,
+        DKK,
+        EUR,
+        GBP,
+        HKD,
+        HUF,
+        IDR,
+        ILS,
+        INR,
+        JPY,
+        KRW,
+        MXN,
+        MYR,
+        NOK,
+        NZD,
+        PHP,
+        PKR,
+        PLN,
+        RUB,
+        SEK,
+        SGD,
+        THB,
+        TRY,
+        TWD,
+        ZAR
+    }
+
     public partial class CoinMarketCapAPIClient
     {
         const string APIEndpoint = "https://pro-api.coinmarketcap.com";
@@ -34,9 +71,9 @@ namespace API.CoinMarketCap
             if (!apiEndpoint.StartsWith($"{APIVersion}/"))
                 apiEndpoint = $"{APIVersion}/{apiEndpoint}";
 
-            // Joins the UrlParams into the apiEndpoint string, and encodes them into url safe strings
+            // Joins the UrlParams into the apiEndpoint string
             if (urlParams.Length > 0)
-                apiEndpoint = apiEndpoint + $"?{String.Join("&", urlParams)}";
+                apiEndpoint = apiEndpoint + $"?{String.Join("&", urlParams.Where(y => y != null))}";
                 
             Uri baseUri = new Uri(APIEndpoint),
                 fullUri = new Uri(baseUri, apiEndpoint);

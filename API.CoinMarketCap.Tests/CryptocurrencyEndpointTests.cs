@@ -1,4 +1,5 @@
 ﻿using API.CoinMarketCap.Response.Info;
+using API.CoinMarketCap.Response.Latest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace API.CoinMarketCap.Tests
 {
     [TestClass]
-    public class CryptocurrencyEndpointTests : IEndpointTest
+    public class CryptocurrencyEndpointTests
     {
         CoinMarketCapAPIClient client;
 
@@ -27,16 +28,38 @@ namespace API.CoinMarketCap.Tests
         {
             CryptocurrencyInfoResponse singleResult = await this.client.GetCryptocurrencyInfo("BTC");
             Assert.IsTrue(singleResult.Data.Count == 1);
-            Assert.IsTrue(singleResult.Data[0].Symbol.ToLower() == "btc");
+            Assert.IsTrue(singleResult.Data["BTC"].Symbol.ToLower() == "btc");
 
             CryptocurrencyInfoResponse multiResult = await this.client.GetCryptocurrencyInfo("BTC", "ETH");
             Assert.IsTrue(multiResult.Data.Count == 2);
-            Assert.IsTrue(multiResult.Data[1].Symbol.ToLower() == "eth");
+            Assert.IsTrue(multiResult.Data["ETH"].Symbol.ToLower() == "eth");
         }
 
-        public Task Latest()
+        [TestMethod]
+        public async Task QuotesLatest()
         {
-            throw new NotImplementedException();
+            CryptocurrencyQuotesResponse singleResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] { "BTC" });
+            Assert.IsTrue(singleResult.Data.Count == 1);
+            Assert.IsTrue(singleResult.Data["BTC"].Symbol.ToLower() == "btc");
+            Assert.IsNotNull(singleResult.Data["BTC"].Quote[FiatCurrency.USD.ToString()]);
+
+            CryptocurrencyQuotesResponse multiResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] { "BTC", "ETH" }, FiatCurrency.AUD);
+            Assert.IsTrue(multiResult.Data.Count == 2);
+            Assert.IsTrue(multiResult.Data["ETH"].Symbol.ToLower() == "eth");
+        }
+
+        [TestMethod]
+        public async Task QuotesLatestConvertCurrency()
+        {
+            CryptocurrencyQuotesResponse singleResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] {"ETH" }, FiatCurrency.AUD);
+            Assert.IsTrue(singleResult.Data.Count == 1);
+            Assert.IsTrue(singleResult.Data["ETH"].Symbol.ToLower() == "eth");
+            Assert.IsNotNull(singleResult.Data["ETH"].Quote[FiatCurrency.AUD.ToString()]);
+
+            CryptocurrencyQuotesResponse multiResult = await this.client.GetCryptocurrencyQuotesLatest(new string[] { "BTC", "ETH" });
+            Assert.IsTrue(multiResult.Data.Count == 2);
+            Assert.IsTrue(multiResult.Data["ETH"].Symbol.ToLower() == "eth");
+            Assert.IsNotNull(multiResult.Data["ETH"].Quote[FiatCurrency.USD.ToString()]);
         }
 
         public Task Map()

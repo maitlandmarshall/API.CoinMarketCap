@@ -33,17 +33,8 @@ namespace API.CoinMarketCap.Response.Info
         public UrlsSegment Urls { get; set; }
     }
 
-    public class CryptocurrencyInfoResponse : CoinMarketCapAPIResponse<List<CryptocurrencyInfo>>
+    public class CryptocurrencyInfoResponse : CoinMarketCapAPIResponse<Dictionary<string, CryptocurrencyInfo>>
     {
-        public override List<CryptocurrencyInfo> Data
-        {
-            get
-            {
-                if (this.data != null)
-                    return this.data;
-
-                return this.data = this.WeakData.Children().Select(y => y.First.ToObject<CryptocurrencyInfo>()).ToList();
-            }
-        }
+        
     }
 }

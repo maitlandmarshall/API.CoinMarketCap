@@ -1,11 +1,11 @@
-﻿using API.CoinMarketCap.Response.Info;
+﻿using Api.CoinMarketCap.Response.Info;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.CoinMarketCap.Response
+namespace Api.CoinMarketCap.Response
 {
     public class Status
     {

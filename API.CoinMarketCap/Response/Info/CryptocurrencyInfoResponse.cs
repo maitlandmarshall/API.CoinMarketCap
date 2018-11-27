@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace API.CoinMarketCap.Response.Info
+namespace Api.CoinMarketCap.Response.Info
 {
     public class CryptocurrencyInfo
     {

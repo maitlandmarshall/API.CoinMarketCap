@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.CoinMarketCap.Response.Quotes
+namespace Api.CoinMarketCap.Response.Quotes
 {
     public class CryptocurrencyQuote
     {

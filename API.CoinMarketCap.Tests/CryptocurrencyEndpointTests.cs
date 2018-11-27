@@ -1,21 +1,21 @@
-﻿using API.CoinMarketCap.Response.Info;
-using API.CoinMarketCap.Response.Quotes;
+﻿using Api.CoinMarketCap.Response.Info;
+using Api.CoinMarketCap.Response.Quotes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API.CoinMarketCap.Tests
+namespace Api.CoinMarketCap.Tests
 {
     [TestClass]
     public class CryptocurrencyEndpointTests
     {
-        CoinMarketCapAPIClient client;
+        CoinMarketCapApiClient client;
 
         public CryptocurrencyEndpointTests()
         {
-            this.client = new CoinMarketCapAPIClient("61663324-40cb-43c7-9c0f-9528051771eb");
+            this.client = new CoinMarketCapApiClient("61663324-40cb-43c7-9c0f-9528051771eb");
         }
 
         public Task Historical()

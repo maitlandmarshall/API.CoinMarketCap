@@ -1,5 +1,5 @@
-﻿using API.CoinMarketCap.Response.Info;
-using API.CoinMarketCap.Response.Quotes;
+﻿using Api.CoinMarketCap.Response.Info;
+using Api.CoinMarketCap.Response.Quotes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API.CoinMarketCap
+namespace Api.CoinMarketCap
 {
-    public partial class CoinMarketCapAPIClient
+    public partial class CoinMarketCapApiClient
     {
         #region INFO
         public Task<CryptocurrencyInfoResponse> GetCryptocurrencyInfo(params int[] ids) =>

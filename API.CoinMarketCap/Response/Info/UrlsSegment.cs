@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace API.CoinMarketCap.Response.Info
+namespace Api.CoinMarketCap.Response.Info
 {
     public class UrlsSegment
     {

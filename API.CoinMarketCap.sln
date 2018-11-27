@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.CoinMarketCap", "API.CoinMarketCap\API.CoinMarketCap.csproj", "{9699F980-E6D8-43BF-859F-AFA4FB76FF59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CoinMarketCap", "API.CoinMarketCap\Api.CoinMarketCap.csproj", "{9699F980-E6D8-43BF-859F-AFA4FB76FF59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.CoinMarketCap.Tests", "API.CoinMarketCap.Tests\API.CoinMarketCap.Tests.csproj", "{6A858ACF-7041-4B95-A79A-EB8FDB780B4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CoinMarketCap.Tests", "API.CoinMarketCap.Tests\Api.CoinMarketCap.Tests.csproj", "{6A858ACF-7041-4B95-A79A-EB8FDB780B4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CoinMarketCap.MicroService", "Api.CoinMarketCap.MicroService\Api.CoinMarketCap.MicroService.csproj", "{D7408569-47E9-4033-8BBD-9C826BA0DFEA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CoinMarketCap.MicroService.Client", "Api.CoinMarketCap.MicroService.Client\Api.CoinMarketCap.MicroService.Client.csproj", "{1EF86249-744D-4C5E-ABB3-92206673A56F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.CoinMarketCap.MicroService.Client.Tests", "Api.CoinMarketCap.MicroService.Client.Tests\Api.CoinMarketCap.MicroService.Client.Tests.csproj", "{9D30C416-7BB7-4034-88C2-250E7F87AD8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MicroService", "MicroService", "{3887A9DD-6EE6-4B2C-97CE-FB086ABCED30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +29,26 @@ Global
 		{6A858ACF-7041-4B95-A79A-EB8FDB780B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A858ACF-7041-4B95-A79A-EB8FDB780B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A858ACF-7041-4B95-A79A-EB8FDB780B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7408569-47E9-4033-8BBD-9C826BA0DFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7408569-47E9-4033-8BBD-9C826BA0DFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7408569-47E9-4033-8BBD-9C826BA0DFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7408569-47E9-4033-8BBD-9C826BA0DFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF86249-744D-4C5E-ABB3-92206673A56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF86249-744D-4C5E-ABB3-92206673A56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF86249-744D-4C5E-ABB3-92206673A56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF86249-744D-4C5E-ABB3-92206673A56F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D30C416-7BB7-4034-88C2-250E7F87AD8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D30C416-7BB7-4034-88C2-250E7F87AD8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D30C416-7BB7-4034-88C2-250E7F87AD8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D30C416-7BB7-4034-88C2-250E7F87AD8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D7408569-47E9-4033-8BBD-9C826BA0DFEA} = {3887A9DD-6EE6-4B2C-97CE-FB086ABCED30}
+		{1EF86249-744D-4C5E-ABB3-92206673A56F} = {3887A9DD-6EE6-4B2C-97CE-FB086ABCED30}
+		{9D30C416-7BB7-4034-88C2-250E7F87AD8B} = {3887A9DD-6EE6-4B2C-97CE-FB086ABCED30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CA19C63-78BB-40AC-85CB-6210BDD570CA}

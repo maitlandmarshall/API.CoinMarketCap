@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API.CoinMarketCap\API.CoinMarketCap.csproj" />
+    <ProjectReference Include="..\API.CoinMarketCap\Api.CoinMarketCap.csproj" />
   </ItemGroup>
 
 </Project>

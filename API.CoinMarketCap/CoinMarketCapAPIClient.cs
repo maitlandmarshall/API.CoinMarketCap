@@ -1,5 +1,5 @@
-﻿using API.CoinMarketCap.Response;
-using API.CoinMarketCap.Response.Info;
+﻿using Api.CoinMarketCap.Response;
+using Api.CoinMarketCap.Response.Info;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace API.CoinMarketCap
+namespace Api.CoinMarketCap
 {
     public enum FiatCurrency
     {
@@ -49,7 +49,7 @@ namespace API.CoinMarketCap
         ZAR
     }
 
-    public partial class CoinMarketCapAPIClient
+    public partial class CoinMarketCapApiClient
     {
         const string APIEndpoint = "https://pro-api.coinmarketcap.com";
         const string APIVersion = "v1";
@@ -57,7 +57,7 @@ namespace API.CoinMarketCap
 
         public string APIKey { get; private set; }
 
-        public CoinMarketCapAPIClient(string apiKey)
+        public CoinMarketCapApiClient(string apiKey)
         {
             if (String.IsNullOrEmpty(apiKey))
                 throw new ArgumentException("You must provide a valid API Key.");
